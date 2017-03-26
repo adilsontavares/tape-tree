@@ -8,7 +8,7 @@ class Random: NSObject {
         return from + (to - from) * (CGFloat(arc4random_uniform(precision)) / CGFloat(precision))
     }
     
-    class func value() -> CGFloat {
+    class func interval01() -> CGFloat {
         return interval(from: 0.0, to: 1.0)
     }
     

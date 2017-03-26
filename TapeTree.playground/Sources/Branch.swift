@@ -129,7 +129,7 @@ class Branch : SKShapeNode {
     
     class func createTree(withDepth depth: Int, color: SKColor) -> Branch {
         
-        let offset  = CGPoint(x: Random.interval(from: -70.0, to: 70.0), y: Random.interval(from: 120.0, to: 170.0))
+        let offset  = CGPoint(x: Random.interval(from: -40.0, to: 40.0), y: Random.interval(from: 120, to: 230))
         let root = Branch.from(CGPoint(x: 0.0, y: 0.0), to: offset)
         
         root.color = color
@@ -259,18 +259,17 @@ class Branch : SKShapeNode {
         
         setTreeAnimationTime(1.0)
         
-        let totalDepth = self.calculateDepth()
-        let deltaDuration = (duration / TimeInterval(totalDepth)) * 0.5
+//        let totalDepth = self.calculateDepth()
+        let deltaDuration = duration * 0.5//(duration / TimeInterval(totalDepth)) * 0.5
         
         for branch in self.branches {
-            branch.decrease(withDuration: duration - deltaDuration)
+            branch.decrease(withDuration: duration)
         }
         
         let updateAnim = SKAction.customAction(withDuration: deltaDuration) { node, time in
             
             let ratio = 1 - (time / CGFloat(deltaDuration))
             self.animationTime = ratio
-            self.alpha = 1 - ratio
         }
         
         let centerAnim = SKAction.customAction(withDuration: deltaDuration) { (node, time) in
@@ -279,10 +278,7 @@ class Branch : SKShapeNode {
             self.accent?.animationTime = 1 - ratio
         }
         
-        let wait = SKAction.wait(forDuration: TimeInterval(totalDepth) * deltaDuration)
-        
         let actions = SKAction.sequence([
-            wait,
             centerAnim,
             updateAnim,
         ])

@@ -72,6 +72,8 @@ class ButterflyWing : SKShapeNode {
     }
     
     func stopAnimation() {
+        
+        setScale(1.0)
         removeAllActions()
     }
 }
