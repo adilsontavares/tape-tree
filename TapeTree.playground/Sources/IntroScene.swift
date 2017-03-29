@@ -23,6 +23,6 @@ class IntroScene : SKScene, ContinueButtonDelegate {
     func continueButtonWasPressed(continueButton: ContinueButton) {
         
         let game = GameScene(size: self.size)
-        view?.presentScene(game, transition: .crossFade(withDuration: 2.0))
+        view?.presentScene(game, transition: .fade(withDuration: 2.0))
     }
 }
