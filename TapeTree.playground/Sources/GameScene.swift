@@ -38,7 +38,12 @@ class GameScene : SKScene {
         slideshow.label.verticalAlignmentMode = .bottom
         addChild(slideshow)
         
+//        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
+//            self.createRoot()
+//        }
+        
         animateBackground()
+        
         
         Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { _ in
             self.animateButterfly()
