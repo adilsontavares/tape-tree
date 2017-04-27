@@ -26,10 +26,10 @@ class GameScene : SKScene {
         swing.seat.addChild(butterfly)
         
         slideshow = Slideshow(content: [
-            "O simples bater de asas de uma borboleta...",
-            "...pode influenciar o mundo.",
-            "E você...",
-            "...como suas ações modificam o mundo?"
+            "The flapping of a butterfly's wings",
+            "...can change the future.",
+            "And you...",
+            "...what are you doing to change the world?"
         ])
         slideshow.label.fontSize = 21.0
         slideshow.zPosition = 100.0
@@ -38,12 +38,7 @@ class GameScene : SKScene {
         slideshow.label.verticalAlignmentMode = .bottom
         addChild(slideshow)
         
-//        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
-//            self.createRoot()
-//        }
-        
         animateBackground()
-        
         
         Timer.scheduledTimer(withTimeInterval: 4.0, repeats: false) { _ in
             self.animateButterfly()

@@ -13,9 +13,9 @@ public class Application : NSObject {
     public func run() {
         
         let view = SKView(frame: NSRect(origin: .zero, size: size))
-        view.showsFPS = true
-        view.showsNodeCount = true
-        view.showsDrawCount = true
+//        view.showsFPS = true
+//        view.showsNodeCount = true
+//        view.showsDrawCount = true
         
         let scene = GameScene(size: size)
         view.presentScene(scene)
