@@ -3,6 +3,7 @@
 
 The original idea was to play with creative coding. The main goal was to create a tree based on Tape Tree rules, available at [Conditional Design](https://conditionaldesign.org/workshops/tape-is-made-from-trees/).
 
+![Tree generation](https://raw.githubusercontent.com/adilsontavares/tape-tree/master/demo.gif)
 Each execution is unique. The trees got generated in a different way, with different colors and formats.
 
 ### Teaser
